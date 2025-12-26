@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#define N 9
+
+// Função para imprimir o tabuleiro
+void imprimirTabuleiro(int tabuleiro[N][N]) {
+    printf("\n  ");
+    for (int i = 0; i < N; i++) {
+        printf(" %d ", i + 1);
+        if ((i + 1) % 3 == 0 && i < N - 1) printf(" ");
+    }
+    printf("\n");
+    
+    for (int i = 0; i < N; i++) {
+        if (i % 3 == 0) {
+            printf("  +-------+-------+-------+\n");
+        }
+        printf("%d |", i + 1);
+        for (int j = 0; j < N; j++) {
+            if (tabuleiro[i][j] == 0)
+                printf(" . ");
+            else
+                printf(" %d ", tabuleiro[i][j]);
+            if ((j + 1) % 3 == 0) printf("|");
+        }
+        printf("\n");
+    }
+    printf("  +-------+-------+-------+\n");
+}
+
+// Verifica se é seguro colocar um número
+bool ehSeguro(int tabuleiro[N][N], int linha, int coluna, int num) {
+    // Verifica linha
+    for (int x = 0; x < N; x++)
+        if (tabuleiro[linha][x] == num)
+            return false;
+    
+    // Verifica coluna
+    for (int x = 0; x < N; x++)
+        if (tabuleiro[x][coluna] == num)
+            return false;
+    
+    // Verifica quadrante 3x3
+    int inicioLinha = linha - linha % 3;
+    int inicioColuna = coluna - coluna % 3;
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (tabuleiro[i + inicioLinha][j + inicioColuna] == num)
+                return false;
+    
+    return true;
+}
+
+// Resolver Sudoku usando backtracking
+bool resolverSudoku(int tabuleiro[N][N]) {
+    int linha, coluna;
+    bool vazio = false;
+    
+    for (linha = 0; linha < N; linha++) {
+        for (coluna = 0; coluna < N; coluna++) {
+            if (tabuleiro[linha][coluna] == 0) {
+                vazio = true;
+                break;
+            }
+        }
+        if (vazio) break;
+    }
+    
+    if (!vazio) return true;
+    
+    for (int num = 1; num <= 9; num++) {
+        if (ehSeguro(tabuleiro, linha, coluna, num)) {
+            tabuleiro[linha][coluna] = num;
+            if (resolverSudoku(tabuleiro))
+                return true;
+            tabuleiro[linha][coluna] = 0;
+        }
+    }
+    return false;
+}
+
+int main() {
+    // Tabuleiro inicial com alguns números
+    int tabuleiro[N][N] = {
+        {5, 3, 0, 0, 7, 0, 0, 0, 0},
+        {6, 0, 0, 1, 9, 5, 0, 0, 0},
+        {0, 9, 8, 0, 0, 0, 0, 6, 0},
+        {8, 0, 0, 0, 6, 0, 0, 0, 3},
+        {4, 0, 0, 8, 0, 3, 0, 0, 1},
+        {7, 0, 0, 0, 2, 0, 0, 0, 6},
+        {0, 6, 0, 0, 0, 0, 2, 8, 0},
+        {0, 0, 0, 4, 1, 9, 0, 0, 5},
+        {0, 0, 0, 0, 8, 0, 0, 7, 9}
+    };
+    
+    printf("=== JOGO DE SUDOKU ===\n");
+    printf("\nTabuleiro inicial:\n");
+    imprimirTabuleiro(tabuleiro);
+    
+    printf("\nResolvendo...\n");
+    
+    if (resolverSudoku(tabuleiro)) {
+        printf("\nSolucao encontrada:\n");
+        imprimirTabuleiro(tabuleiro);
+    } else {
+        printf("\nNao existe solucao para este Sudoku.\n");
+    }
+    
+    printf("\nPressione Enter para sair...");
+    getchar();
+    
+    return 0;
+}
