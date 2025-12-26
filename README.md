@@ -75,7 +75,7 @@ Exemplo de entrada (primeira linha):
 Funcionalidade «Bandeira Branca»
 Se você digitar 0 em todas as 81 posições, o programa interpreta como «desistência».
 
-Nesse caso, eleI reinicia automaticamente com um tabuleiro padrão pré‑definido (não exibe mensagem).
+Nesse caso, ele reinicia automaticamente com um tabuleiro padrão pré‑definido (não exibe mensagem).
 
 O resolvedor então tenta solucionar o novo tabuleiro.
 
