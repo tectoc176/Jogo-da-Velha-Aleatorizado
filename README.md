@@ -16,11 +16,24 @@ Você precisa de um compilador C. Escolha uma opção:
 
 IDE (recomendado para estudantes):
 
-Code::Blocks (Windows/Linux)
+CodeBlocks (Windows/Linux): Este é o ambiente multiplataforma de desenvolvimento para as linguagens de programação C, C++, D (com restrições) e Fortran. Ele é desenvolvido para Windows, Linux e macOS, e também pode ser compilado a partir do código fonte sob outros sistemas do tipo Unix, por exemplo, FreeBSD ou o PC-BSD. Escrito em C++ usando a biblioteca wxWidgets e tem uma arquitetura aberta, o que permite expandir a sua funcionalidade através de plug-ins. 
 
-VS Code + extensão C/C++
+VS Code + extensão C/C++: É a combinação de um editor de texto Visual Studio Code e oficial ampliação da Microsoft para suporte a linguagens de programação C e C++. VS Code é antes de tudo um editor, e para compilação e depuração são usados externo de ferramentas de linha de comando. A própria extensão não inclui o compilador ou debugger, eles precisam ser instalados separadamente ou utilizar uma já existente no computador
 
-Dev‑C++ (Windows)
+Dev‑C++ (Windows): é um ambiente de desenvolvimento integrado (IDE) para as linguagens C e C++, projetado para funcionar no Windows. Ela usa um compilador porta MinGW GCC (GNU Compiler Collection), mas também pode funcionar com o Cygwin ou outros compiladores baseados em GCC. Dev-C++ está escrito em Delphi. 
+
+Ideone: Compilar online e uma ferramenta de depuração, oferece suporte a mais de 60 linguagens de programação, incluindo C. Permite configurar limites de tempo, para especificar os dados para o padrão de entrada, adicionar uma descrição do código de compartilhar com os colegas de trabalho e amigos. Utiliza a tecnologia Sphere Mecanismo de seguro para a execução de programas no servidor remoto. 
+
+JDoodle: Compilador online e IDE, suporta mais de 88 linguagens de programação, incluindo C. Tem a função de colaboração: vários usuários podem editar o mesmo código ao mesmo tempo. Suporta многофайловые projetos, bibliotecas externas e tem um AI-assistente do JDroid para a geração de depuração e otimização de código. 
+
+OnlineGDB: Compilador online e depurador com suporte a C e C++. É conhecido o fato de que esta é a primeira on-line-IDE com um depurador GDB. Permite que o passo a passo para depurar o código, compartilhar fotos de código e retomar a sessão de URL. Suporta cross-compilação para o AVR, ARM, MIPS e outras plataformas. 
+
+OneCompiler: Compilador online que suporta mais de 70 linguagens de programação, incluindo C. Funciona com a versão mais recente do padrão de C18. Tem uma interface simples, o apoio/s padrão (stdin) e a possibilidade de salvar o código. 
+
+ToolPix: Acesso on-line-o compilador C, que não requer a instalação do GCC ou configurar o MinGW. Suporta padrão de funções de entrada/saída (scanf e printf), permite trabalhar com projetos em qualquer lugar e em qualquer dispositivo. 
+Replit. On-line-IDE com suporte a mais de 60 linguagens de programação, incluindo C. Permite a criação de aplicativos e sites da web diretamente no seu navegador, integra-se com o GitHub, suporta a colaboração em tempo real. Tem premium-plano de recursos adicionais. 
+
+CodeChef: Compilador online C, muitas vezes usado para a participação em competições de programação. 
 
 Terminal/Linha de comando:
 
